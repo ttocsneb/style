@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "sass": "^1.45.1"
+  },
+  "name": "style",
+  "version": "0.1.0",
+  "description": "Styles for my websites",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttocsneb/style.git"
+  },
+  "keywords": [
+    "style",
+    "css",
+    "scss"
+  ],
+  "author": "Benjamin Jacobs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttocsneb/style/issues"
+  },
+  "homepage": "https://github.com/ttocsneb/style#readme"
+}

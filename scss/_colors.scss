@@ -1,0 +1,34 @@
+
+.color {
+    @include map($colors) using ($color) {
+        color: $color !important;
+    }
+    @include sizes {
+        @include map($colors) using ($color) {
+            color: $color !important;
+        }
+    }
+}
+
+.bg {
+    @include map($colors) using ($color) {
+        background-color: $color;
+    }
+    @include sizes {
+        @include map($colors) using ($color) {
+            background-color: $color;
+        }
+    }
+}
+
+$text-colors: (
+    'light': $text-light,
+    'dark': $text-dark,
+    'gray': $text-gray,
+);
+
+.text {
+    @include map($text-colors) using ($color) {
+        color: $color;
+    }
+}

@@ -1,0 +1,52 @@
+
+button {
+    padding: 3px;
+    border-radius: 3px;
+    border: 0px;
+    background-color: $dark;
+    color: $text-light;
+
+    &:hover {
+        background-color: darken($color-light, 20%);
+        color: $text-dark;
+
+        @include darkmode {
+            background-color: lighten($color-dark, 10%);
+        }
+    }
+
+    &.btn {
+        @include map($color-pairs) using ($pair) {
+            background-color: list.nth($pair, 1);
+            color: list.nth($pair, 2);
+            &:hover {
+                background-color: lighten($color-secondary, 20%);
+                color: list.nth($pair, 1);
+            }
+        }
+    }
+}
+
+textarea {
+    padding: 4px;
+    border-radius: 2px;
+    border: 1px solid $dark;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    padding: 4px;
+
+    &[type="text"], &[type="password"] {
+        // border-radius: 2px;
+        // border: 1px solid $dark;
+        font-family: Arial, Helvetica, sans-serif;
+
+        // &.input {
+        //     @include map($colors) using ($color) {
+        //         border-radius: 2px;
+        //         border-radius: 1px solid $color !important;
+        //     }
+        // }
+    }
+}

@@ -1,0 +1,147 @@
+
+$displays: (
+    "inline": inline,
+    "block": block,
+    "flex": flex,
+    "none": none
+);
+
+.d {
+    @include map($displays) using ($val) {
+        display: $val;
+    }
+    @include sizes {
+        @include map($displays) using ($val) {
+            display: $val;
+        }
+    }
+}
+
+// Flex
+
+$direction: (
+    "row": row,
+    "row-reverse": row-reverse,
+    "col": column,
+    "col-reverse": column-reverse
+);
+
+$wrap: (
+    "wrap": wrap,
+    "nowrap": nowrap,
+    "wrap-reverse": wrap-reverse
+);
+
+.flex {
+    @include map($direction) using ($val) {
+        flex-direction: $val;
+    }
+    @include map($wrap) using ($val) {
+        flex-wrap: $val;
+    }
+
+    @include sizes {
+        @include map($direction) using ($val) {
+            flex-direction: $val;
+        }
+        @include map($wrap) using ($val) {
+            flex-wrap: $val;
+        }
+    }
+}
+
+$justify: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "between": space-between,
+    "around": space-around,
+    "even": space-evenly
+);
+$align-items: (
+    "stretch": stretch,
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "baseline": space-between
+);
+$align-content: (
+    "start": flex-start,
+    "end": flex-end,
+    "center": center,
+    "between": space-between,
+    "around": space-around,
+    "even": space-evenly,
+    "stretch": stretch
+);
+
+.justify {
+    @include map($justify) using ($val) {
+        justify-content: $val;
+    }
+    @include sizes {
+        @include map($justify) using ($val) {
+            justify-content: $val;
+        }
+    }
+}
+
+.align-items {
+    @include map($align-items) using ($val) {
+        align-items: $val;
+    }
+    @include sizes {
+        @include map($align-items) using ($val) {
+            align-items: $val;
+        }
+    }
+}
+
+.align-content {
+    @include map($align-content) using ($val) {
+        align-items: $val;
+    }
+    @include sizes {
+        @include map($align-content) using ($val) {
+            align-items: $val;
+        }
+    }
+}
+
+.order {
+    @for $i from 0 through 5 {
+        &-#{$i} {
+            order: $i;
+        }
+    }
+    @include sizes {
+        @for $i from 0 through 5 {
+            &-#{$i} {
+                order: $i;
+            }
+        }
+    }
+}
+
+// Float
+
+$sides: (
+    "left": left,
+    "right": right,
+    "none": none
+);
+
+.float {
+    @include map($sides) using ($val) {
+        float: $val;
+    }
+    @include sizes {
+        @include map($sides) using ($val) {
+            float: $val;
+        }
+    }
+
+    &-overflow {
+        overflow: hidden;
+    }
+}

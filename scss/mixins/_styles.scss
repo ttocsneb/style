@@ -1,0 +1,8 @@
+
+@mixin underline($color: null) {
+    border-bottom: solid 1px $color;
+}
+
+@mixin nounderline {
+    border-bottom: 0px;
+}

@@ -1,0 +1,39 @@
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: 8px;
+
+        // &:not(:last-child) {
+        //     padding-right: 8px;
+        // }
+    }
+}
+
+.col {
+    flex: 1;
+    width: auto;
+
+    @for $i from 1 through 12 {
+        &-#{$i} {
+            flex: 0 0 auto;
+            width: calc($i / 12 * 100%);
+        }
+        @include sizes {
+            &-#{$i} {
+                flex: 0 0 auto;
+                width: calc($i / 12 * 100%);
+            }
+        }
+    }
+
+    &-auto {
+        flex-grow: 1;
+    }
+}

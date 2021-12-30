@@ -1,0 +1,67 @@
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 8px;
+    padding-right: 8px;
+    max-width: #{$size-sm - 300px};
+    
+    &-xs, &-sm, &-md, &-lg {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+        max-width: #{$size-sm - 300px};
+    }
+
+    @media only screen and (min-width: $size-sm) {
+        max-width: $size-sm;
+        &-sm, &-md, &-lg {
+            max-width: $size-sm;
+        }
+    }
+
+    @media only screen and (min-width: $size-md) {
+        max-width: $size-md;
+        &-md, &-lg {
+            max-width: $size-md;
+        }
+    }
+
+    @media only screen and (min-width: $size-lg) {
+        max-width: $size-lg;
+        &-lg {
+            max-width: $size-md;
+        }
+    }
+
+    &-fluid {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 8px;
+        padding-right: 8px;
+        width: 100%;
+        max-width: 100%;
+
+        &-xs {
+            @extend .container-fluid;
+            max-width: #{$size-sm - 300px};
+        }
+
+        &-sm {
+            @extend .container-fluid;
+            max-width: $size-sm;
+        }
+
+        &-md {
+            @extend .container-fluid;
+            max-width: $size-md;
+        }
+
+        &-lg {
+            @extend .container-fluid;
+            max-width: $size-lg;
+        }
+    }
+
+}

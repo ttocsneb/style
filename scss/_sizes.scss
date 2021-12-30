@@ -1,0 +1,206 @@
+
+$sizing: (
+    "100": 100%,
+    "auto": auto
+);
+
+.w {
+    @for $i from 1 through 12 {
+        &-#{$i} {
+            width: calc($i / 12 * 100%);
+        }
+    }
+    @include map($sizing) using ($val) {
+        width: $val;
+    }
+    @include sizes {
+        @for $i from 1 through 12 {
+            &-#{$i} {
+                width: calc($i / 12 * 100%);
+            }
+        }
+        @include map($sizing) using ($val) {
+            width: $val;
+        }
+    }
+}
+
+.h {
+    @include map($sizing) using ($val) {
+        height: $val;
+    }
+    @include sizes {
+        @include map($sizing) using ($val) {
+            height: $val;
+        }
+    }
+}
+
+$sizing: (
+    "0": 0px,
+    "1": 1px,
+    "2": 2px,
+    "3": 4px,
+    "4": 8px,
+    "5": 16px
+);
+
+.p {
+    @include map($sizing) using ($val) {
+        padding: $val;
+    }
+    @include sizes {
+        @include map($sizing) using ($val) {
+            padding: $val;
+        }
+    }
+    &t {
+        @include map($sizing) using ($val) {
+            padding-top: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                padding-top: $val;
+            }
+        }
+    }
+    &b {
+        @include map($sizing) using ($val) {
+            padding-bottom: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                padding-bottom: $val;
+            }
+        }
+    }
+    &s {
+        @include map($sizing) using ($val) {
+            padding-left: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                padding-left: $val;
+            }
+        }
+    }
+    &e {
+        @include map($sizing) using ($val) {
+            padding-right: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                padding-right: $val;
+            }
+        }
+    }
+    &x {
+        @include map($sizing) using ($val) {
+            padding-left: $val;
+            padding-right: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                padding-left: $val;
+                padding-right: $val;
+            }
+        }
+    }
+    &y {
+        @include map($sizing) using ($val) {
+            padding-top: $val;
+            padding-bottom: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                padding-top: $val;
+                padding-bottom: $val;
+            }
+        }
+    }
+}
+
+$sizing: (
+    "0": 0px,
+    "1": 1px,
+    "2": 2px,
+    "3": 4px,
+    "4": 8px,
+    "5": 16px,
+    "auto": auto
+);
+
+.m {
+    @include map($sizing) using ($val) {
+        margin: $val;
+    }
+    @include sizes {
+        @include map($sizing) using ($val) {
+            margin: $val;
+        }
+    }
+    &t {
+        @include map($sizing) using ($val) {
+            margin-top: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                margin-top: $val;
+            }
+        }
+    }
+    &b {
+        @include map($sizing) using ($val) {
+            margin-bottom: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                margin-bottom: $val;
+            }
+        }
+    }
+    &s {
+        @include map($sizing) using ($val) {
+            margin-left: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                margin-left: $val;
+            }
+        }
+    }
+    &e {
+        @include map($sizing) using ($val) {
+            margin-right: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                margin-right: $val;
+            }
+        }
+    }
+    &x {
+        @include map($sizing) using ($val) {
+            margin-left: $val;
+            margin-right: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                margin-left: $val;
+                margin-right: $val;
+            }
+        }
+    }
+    &y {
+        @include map($sizing) using ($val) {
+            margin-top: $val;
+            margin-bottom: $val;
+        }
+        @include sizes {
+            @include map($sizing) using ($val) {
+                margin-top: $val;
+                margin-bottom: $val;
+            }
+        }
+    }
+}

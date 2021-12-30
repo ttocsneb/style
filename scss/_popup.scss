@@ -1,0 +1,53 @@
+
+.popup {
+    margin: 0;
+    position: fixed;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color-dark, 0.5);
+
+    &-body {
+        margin: auto;
+        margin-top: 5em;
+        padding: 8px;
+        background-color: $dark;
+        color: $light;
+        box-shadow: 0px 0px 10px black;
+        border-radius: 4px;
+        
+        &-xs, &-sm, &-md, &-lg {
+            margin: auto;
+            margin-top: 5em;
+            padding: 8px;
+            background-color: $dark;
+            color: $light;
+            box-shadow: 0px 0px 10px black;
+            border-radius: 4px;
+            max-width: #{$size-sm - 300px};
+        }
+
+        @media only screen and (min-width: $size-sm) {
+            max-width: $size-sm;
+            &-sm, &-md, &-lg {
+                max-width: $size-sm;
+            }
+        }
+
+        @media only screen and (min-width: $size-md) {
+            max-width: $size-md;
+            &-md, &-lg {
+                max-width: $size-md;
+            }
+        }
+
+        @media only screen and (min-width: $size-lg) {
+            max-width: $size-lg;
+            &-lg {
+                max-width: $size-md;
+            }
+        }
+    }
+}
